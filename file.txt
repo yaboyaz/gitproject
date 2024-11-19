@@ -1,1 +1,3 @@
 This is the initial content of file.txt
+
+Change from feature1 branch
