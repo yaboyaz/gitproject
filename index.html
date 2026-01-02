@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pocket Weather</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Pocket Weather</p>
+        <h1>Check the weather wherever you are</h1>
+        <p class="subtitle">
+          Look up any city or let us use your current location. Powered by the free
+          Open-Meteo API—no sign-up required.
+        </p>
+      </div>
+      <div class="hero-icon" aria-hidden="true">☀️</div>
+    </header>
+
+    <section class="panel">
+      <form id="search-form" class="search">
+        <label class="sr-only" for="search-input">Search by city</label>
+        <input
+          id="search-input"
+          name="city"
+          class="input"
+          type="search"
+          placeholder="Search by city (e.g. Manila)"
+          autocomplete="off"
+          required
+        />
+        <div class="actions">
+          <button class="btn primary" type="submit">Search</button>
+          <button class="btn ghost" type="button" id="locate-btn">Use my location</button>
+        </div>
+      </form>
+      <p class="status" id="status" role="status">Waiting for a search…</p>
+    </section>
+
+    <section class="panel current" aria-live="polite">
+      <div class="current-header">
+        <div>
+          <p class="label">Current location</p>
+          <h2 id="location">–</h2>
+          <p class="muted" id="updated">Updated just now</p>
+        </div>
+        <div class="temp" id="temperature">--°</div>
+      </div>
+      <p class="summary" id="summary">Search for a city to see the latest conditions.</p>
+      <dl class="metrics">
+        <div class="metric">
+          <dt>Feels like</dt>
+          <dd id="apparent">--°C</dd>
+        </div>
+        <div class="metric">
+          <dt>Humidity</dt>
+          <dd id="humidity">--%</dd>
+        </div>
+        <div class="metric">
+          <dt>Wind</dt>
+          <dd id="wind">-- km/h</dd>
+        </div>
+        <div class="metric">
+          <dt>Precipitation</dt>
+          <dd id="precipitation">-- mm</dd>
+        </div>
+      </dl>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
